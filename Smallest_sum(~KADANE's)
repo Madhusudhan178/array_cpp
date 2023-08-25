@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+int minSum(int arr[],int size)
+{
+    
+    int currentMin=INT_MAX;
+    int minimum=INT_MAX;
+    
+    for(int i=0;i<size;i++)
+    {
+        if(currentMin>0)
+        {
+            currentMin=arr[i];
+            
+        }
+        else
+        {
+            currentMin=currentMin+arr[i];
+            
+        }
+        minimum=min(minimum,currentMin);
+    }
+    return minimum;
+    
+    
+}
+
+
+
+int main()
+{
+    int k;
+    cout<<"Enter the value of k"<<endl;
+    cin>>k;
+    int arr[]={3,-4,2,-3,-1,7,-5};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    
+    
+    cout<<"Minium sum:"<<minSum(arr,size);
+     
+    return 0;
+}
